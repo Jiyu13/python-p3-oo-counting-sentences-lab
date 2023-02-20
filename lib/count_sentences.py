@@ -37,7 +37,7 @@ class MyString:
 
   # define instance method
   def count_sentences(self):
-    value = self.value
+    value = self.value  
     for mark in ["?", "!"]:
       value = value.replace(mark, ".")
     
