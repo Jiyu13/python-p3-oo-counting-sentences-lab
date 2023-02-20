@@ -1,46 +1,33 @@
-#!/usr/bin/env python3
-
 class MyString:
-  
-  def __init__(self, value=""):
+
+  def __init__(self, value = ""):
     self._value = value
-
-
+    
   def get_value(self):
     return self._value
 
-  
-  def set_value(self, string):
-    if type(string) == str:
-      self._value = string
+  def set_value(self, stringVal):
+    if (type(stringVal) == str):
+      self._value = stringVal
     else:
       print("The value must be a string.")
 
-
   value = property(get_value, set_value)
 
-
-  # define instance method
   def is_sentence(self):
     return self._value.endswith(".")
 
-
-  # define instance method
   def is_question(self):
-    return  self._value.endswith("?")
+    return self._value.endswith("?")
 
-
-  # define instance method
   def is_exclamation(self):
     return self._value.endswith("!")
 
-
-  # define instance method
   def count_sentences(self):
-    value = self.value  
-    for mark in ["?", "!"]:
-      value = value.replace(mark, ".")
+    value = self.value
+    for punc in ['!','?']:
+        value = value.replace(punc, '.')
     
-    sentences = [sentence for sentence in value.split(".") if sentence]
-
+    sentences = [s for s in value.split('.') if s]
+    
     return len(sentences)
