@@ -20,8 +20,23 @@ class MyString:
   value = property(get_value, set_value)
 
 
+  # define instance method
   def is_sentence(self):
     if self._value.endswith("."):
+      return True
+    else:
+      return False
+
+  # define instance method
+  def is_question(self):
+    if self._value.endswith("?"):
+      return True
+    else:
+      return False
+
+  # define instance method
+  def is_exclamation(self):
+    if self._value.endswith("!"):
       return True
     else:
       return False
