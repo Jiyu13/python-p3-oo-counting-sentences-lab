@@ -22,21 +22,25 @@ class MyString:
 
   # define instance method
   def is_sentence(self):
-    if self._value.endswith("."):
-      return True
-    else:
-      return False
+    return self._value.endswith(".")
+
 
   # define instance method
   def is_question(self):
-    if self._value.endswith("?"):
-      return True
-    else:
-      return False
+    return  self._value.endswith("?")
+
 
   # define instance method
   def is_exclamation(self):
-    if self._value.endswith("!"):
-      return True
-    else:
-      return False
+    return self._value.endswith("!")
+
+
+  # define instance method
+  def count_sentences(self):
+    value = self.value
+    for mark in ["?", "!"]:
+      value = value.replace(mark, ".")
+    
+    sentences = [sentence for sentence in value.split(".") if sentence]
+
+    return len(sentences)
