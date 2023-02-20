@@ -18,3 +18,10 @@ class MyString:
 
 
   value = property(get_value, set_value)
+
+
+  def is_sentence(self):
+    if self._value.endswith("."):
+      return True
+    else:
+      return False
